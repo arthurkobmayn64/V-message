@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Love Letter</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto:wght@700&amp;display=swap" rel="stylesheet"> 
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Pacifico', cursive; /* Romantic and readable font */
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Falling hearts animation */
+    .heart {
+      position: absolute;
+      top: -50px;
+      font-size: 30px;
+      opacity: 0.8;
+      animation: fall 5s infinite ease-in;
+    }
+
+    /* Keyframes for falling hearts */
+    @keyframes fall {
+      0% {
+        top: -50px;
+        opacity: 1;
+      }
+      100% {
+        top: 100vh;
+        opacity: 0;
+      }
+    }
+
+    /* Randomly position and size the hearts */
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-duration: 4s;
+      animation-delay: 0s;
+    }
+
+    .heart:nth-child(2) {
+      left: 20%;
+      animation-duration: 6s;
+      animation-delay: 1s;
+    }
+
+    .heart:nth-child(3) {
+      left: 30%;
+      animation-duration: 7s;
+      animation-delay: 2s;
+    }
+
+    .heart:nth-child(4) {
+      left: 40%;
+      animation-duration: 5s;
+      animation-delay: 0.5s;
+    }
+
+    .heart:nth-child(5) {
+      left: 50%;
+      animation-duration: 8s;
+      animation-delay: 1s;
+    }
+
+    .heart:nth-child(6) {
+      left: 60%;
+      animation-duration: 6s;
+      animation-delay: 2s;
+    }
+
+    .heart:nth-child(7) {
+      left: 70%;
+      animation-duration: 5s;
+      animation-delay: 0s;
+    }
+
+    .heart:nth-child(8) {
+      left: 80%;
+      animation-duration: 7s;
+      animation-delay: 1.5s;
+    }
+
+    .heart:nth-child(9) {
+      left: 90%;
+      animation-duration: 8s;
+      animation-delay: 2.5s;
+    }
+
+    /* Heart shape container */
+    .heartShape {
+      position: relative;
+      width: 250px;
+      height: 230px;
+      margin-top: 30px;
+      display: inline-block;
+      font-size: 0;
+      text-align: center;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heartText {
+      font-size: 18px;
+      color: white;
+      font-weight: bold;
+      line-height: 1.5;
+      word-wrap: break-word;
+      max-width: 85%;
+      text-align: center;
+      white-space: pre-wrap;
+    }
+
+    /* Typing animation for the letter */
+    .letter {
+      font-size: 18px;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      white-space: normal;
+      width: 0;
+      border-right: 2px solid white;
+      animation: typing 12s steps(150) 1s forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Decorative pop-up styling */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #ff4081, #ff80ab);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-family: 'Pacifico', cursive;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Animation for pop-up fade in */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .popup button {
+      background-color: #fff;
+      color: #ff4081;
+      font-size: 20px;
+      border: none;
+      padding: 12px 25px;
+      margin-top: 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .popup button:hover {
+      background-color: #ff4081;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .popup button:focus {
+      outline: none;
+    }
+
+  </style> 
+ </head> 
+ <body> 
+  <div id="fallingHearts"> <!-- Multiple falling hearts --> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="heart">
+    ❤️
+   </div> 
+  </div> 
+  <div class="heartShape"> 
+   <div class="heartText" id="loveLetter"></div> 
+  </div> <!-- Pop-up asking the question --> 
+  <div class="popup" id="popup"> 
+   <p>Wamboo, will you be my Valentine? 💝</p> <button onclick="closePopup()">Yes! 💕</button> 
+  </div> 
+  <script>
+    const loveLetter = `Hello my Love, I know we've been having a lot of fights lately, I am 😞sorry for all the negative feelings born from that, I pray that it builds us rather than tears us down. You are amazing, slay, funny too😂. Anyways, I need to let you know that you mean so much to me, I sincerely LOVE and adore you Liz 🤗❤️.  One last thing☺️`;
+
+    let i = 0;
+    let letterElement = document.getElementById('loveLetter');
+
+    function typeLetter() {
+      if (i < loveLetter.length) {
+        letterElement.innerHTML += loveLetter.charAt(i);
+        i++;
+        setTimeout(typeLetter, 80); // Adjust speed as needed
+      } else {
+        // Show pop-up after message is typed
+        setTimeout(() => {
+          document.getElementById('popup').style.display = 'block';
+        }, 1000);
+      }
+    }
+
+    // Start typing the love letter
+    typeLetter();
+
+    // Close the pop-up when button is clicked
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script> 
+ 
+</body></html>

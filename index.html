@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Start Page</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto:wght@700&amp;display=swap" rel="stylesheet"> 
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Heart positioning */
+    .heart {
+      font-size: 100px;
+      animation: heartPulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartPulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Text styling */
+    .text {
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 40px; /* Adds space between text and button */
+    }
+
+    /* Button styling */
+    .button {
+      padding: 15px 25px;
+      background-color: #ff4081;
+      color: white;
+      font-size: 20px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none; /* Ensure no underline for links */
+    }
+
+    .button:hover {
+      background-color: #ff80ab;
+    }
+
+  </style> 
+ </head> 
+ <body> 
+  <div> 
+   <div class="heart">
+    ❤️
+   </div> 
+   <div class="text">
+    Hello Love
+   </div> <!-- Link to the love_letter.html page --> <a href="love_letter.html" class="button">Click Me! 💌</a> 
+  </div> 
+ 
+</body></html>
